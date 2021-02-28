@@ -38,6 +38,7 @@ function initialPrompt() {
    let wordInput = input.question("Let's play some scrabble! Enter a word:")
    console.log(oldScrabbleScorer(wordInput));
    console.log("Simple score: " + simpleScore(wordInput));
+   console.log("Vowel score: " + vowelBonusScore(wordInput));
 
 };
 
@@ -51,7 +52,22 @@ function simpleScore(word){
   return score;
 };
 
-let vowelBonusScore;
+function vowelBonusScore(word){
+  word = word.toUpperCase();
+  let score = 0;
+  let vowel = ["A", "E", "I", "O", "U"];
+
+  for(let i=0; i < word.length; i++){
+    if(vowel.includes(word[i])){
+      score += 3; 
+    } else {
+      score++;
+    }
+  }
+
+  return score;
+  
+};
 
 let scrabbleScore;
 
