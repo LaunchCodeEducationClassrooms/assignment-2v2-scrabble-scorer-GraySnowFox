@@ -91,7 +91,16 @@ function initialPrompt() {
 };
 
 
-let scrabbleScore;
+function scrabbleScore(word){
+  let score = 0; 
+
+  for(i = 0; i<word.length; i++){
+    score = newPointStructure.word[i];
+  }
+  
+  return score;
+
+};
 
 const scoringAlgorithms = [simpleObject, vowelObject, oldScoreObject];
 
@@ -117,13 +126,26 @@ function scorerPrompt(){
   }
 };
 
-function transform() {};
+function transform(object){
+  let transformation = {};
 
-let newPointStructure;
+  for(scores in object){
+    console.log(scores);
+    console.log(object[scores] + "\n");
+  transformation[object[scores]] = scores;
+
+
+  }
+
+  return transformation;
+};
+
+let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
   let wordInput = initialPrompt();
-  console.log(scorerPrompt().scorerFunction(wordInput));
+  console.log(newPointStructure);
+  console.log("Score for " + wordInput + ": " + scorerPrompt().scorerFunction(wordInput));
 
 
  /* console.log(oldScrabbleScorer(wordInput));
