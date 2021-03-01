@@ -3,6 +3,7 @@
 const input = require("readline-sync");
 
 const oldPointStructure = {
+  0: [' '],
   1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
   2: ['D', 'G'],
   3: ['B', 'C', 'M', 'P'],
@@ -34,6 +35,14 @@ function oldScrabbleScorer(word) {
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
+
+function hasNumber(string) {
+  return /\d/.test(string);
+}
+
+function hasWhiteSpace(string) {
+  return string.indexOf(' ') >= 0;
+}
 
 function simpleScore(word){
   word = word.toUpperCase();
@@ -70,10 +79,10 @@ let simpleObject = {
   scorerFunction: simpleScore
 };
 
-let oldScoreObject = {
+let scoreObject = {
   name: "Scrabble",
-  description: "The traditional scoring algorithm",
-  scorerFunction: oldScrabbleScorer
+  description: "The updated scoring algorithm",
+  scorerFunction: scrabbleScore
 };
 
 let vowelObject = {
@@ -86,23 +95,31 @@ let vowelObject = {
 
 
 function initialPrompt() {
+  let correctInput = false;
+  while(correctInput === false){
    let wordInput = input.question("Let's play some scrabble! Enter a word:")
+   if(hasNumber(wordInput) || hasWhiteSpace(wordInput)){
+     console.log("Please enter a word!")
+   } else{
    return wordInput;
+  }
+  }
 };
 
 
 function scrabbleScore(word){
+  word = word.toUpperCase();
   let score = 0; 
 
   for(i = 0; i<word.length; i++){
-    score = newPointStructure.word[i];
+    score += parseInt(newPointStructure[word[i]]);
   }
   
   return score;
 
 };
 
-const scoringAlgorithms = [simpleObject, vowelObject, oldScoreObject];
+const scoringAlgorithms = [simpleObject, vowelObject, scoreObject];
 
 function scorerPrompt(){
   let correctChoice = false;
@@ -130,11 +147,9 @@ function transform(object){
   let transformation = {};
 
   for(scores in object){
-    console.log(scores);
-    console.log(object[scores] + "\n");
-  transformation[object[scores]] = scores;
-
-
+    for(i=0; i<object[scores].length; i++){
+      transformation[object[scores][i]] = scores;
+    }
   }
 
   return transformation;
@@ -144,7 +159,6 @@ let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
   let wordInput = initialPrompt();
-  console.log(newPointStructure);
   console.log("Score for " + wordInput + ": " + scorerPrompt().scorerFunction(wordInput));
 
 
