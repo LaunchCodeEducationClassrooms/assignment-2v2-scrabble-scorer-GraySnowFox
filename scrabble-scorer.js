@@ -81,7 +81,7 @@ let simpleObject = {
 
 let scoreObject = {
   name: "Scrabble",
-  description: "The updated scoring algorithm",
+  description: "The traditional scoring algorithm.",
   scorerFunction: scrabbleScore
 };
 
@@ -115,6 +115,7 @@ function scrabbleScore(word){
     score += parseInt(newPointStructure[word[i]]);
   }
   
+  parseInt(score);
   return score;
 
 };
