@@ -160,7 +160,7 @@ let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
   let wordInput = initialPrompt();
-  console.log("Score for " + wordInput + ": " + scorerPrompt().scorerFunction(wordInput));
+  console.log("Score for " + wordInput + ": " + scorerPrompt().scoringFunction(wordInput));
 
 
  /* console.log(oldScrabbleScorer(wordInput));
