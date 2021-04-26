@@ -149,12 +149,13 @@ function transform(object){
 
   for(scores in object){
     for(i=0; i<object[scores].length; i++){
-      transformation[object[scores][i]] = scores;
+      transformation[object[scores][i].toLowerCase] = scores;
     }
   }
 
   return transformation;
 };
+
 
 let newPointStructure = transform(oldPointStructure);
 
