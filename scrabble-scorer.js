@@ -131,8 +131,10 @@ function scorerPrompt(){
   }
 };
 
+let newPointStructure = transform(oldPointStructure);
+
 function transform(scoring) {
-  let transformation = {}
+  let transformation = {};
   for (score in scoring){
     for (i = 0; i < scoring[score].length; i++){
       transformation[scoring[score][i].toLowerCase()] = Number(score) 
@@ -142,7 +144,6 @@ function transform(scoring) {
 }
 
 
-let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
   let wordInput = initialPrompt();
