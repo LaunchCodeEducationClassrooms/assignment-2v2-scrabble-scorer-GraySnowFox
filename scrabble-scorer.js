@@ -131,17 +131,15 @@ function scorerPrompt(){
   }
 };
 
-function transform(object){
-  let transformation = {};
-
-  for(scores in object){
-    for(i=0; i<object[scores].length; i++){
-      transformation[object[scores][i].toLowerCase()] = Number(scores);
+function transform(scoring) {
+  let transformation = {}
+  for (score in scoring){
+    for (i = 0; i < scoring[score].length; i++){
+      transformation[scoring[score][i].toLowerCase()] = Number(score) 
     }
   }
-
-  return transformation;
-};
+  return newPointStructure
+}
 
 
 let newPointStructure = transform(oldPointStructure);
