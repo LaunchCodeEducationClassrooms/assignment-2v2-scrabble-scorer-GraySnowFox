@@ -3,7 +3,6 @@
 const input = require("readline-sync");
 
 const oldPointStructure = {
-  0: [' '],
   1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
   2: ['D', 'G'],
   3: ['B', 'C', 'M', 'P'],
@@ -12,6 +11,7 @@ const oldPointStructure = {
   8: ['J', 'X'],
   10: ['Q', 'Z']
 };
+
 
 const scoringAlgorithms = [
   {name:'Simple Score', description:'Each letter is worth 1 point.', scoringFunction:simpleScore},
@@ -142,7 +142,7 @@ function transform(scoring) {
 }
 
 
-let newPointStructure = transform(oldPointStructure);
+let newPointStructure = {};
 
 function runProgram() {
   let wordInput = initialPrompt();
