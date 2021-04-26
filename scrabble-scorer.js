@@ -19,6 +19,8 @@ const scoringAlgorithms = [
   {name:'Scrabble',	description:'The traditional scoring algorithm.',	scoringFunction:scrabbleScore}
 ]
 
+let newPointStructure =  {};
+
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 
@@ -131,7 +133,7 @@ function scorerPrompt(){
   }
 };
 
-let newPointStructure =  {};
+
 
 function transform(scoring) {
   for (score in scoring){
