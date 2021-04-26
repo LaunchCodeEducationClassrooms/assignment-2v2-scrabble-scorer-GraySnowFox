@@ -100,10 +100,9 @@ function scrabbleScore(word){
   let score = 0; 
 
   for(i = 0; i<word.length; i++){
-    score += parseInt(newPointStructure[word[i]]);
+    score += newPointStructure[word[i]];
   }
   
-  parseInt(score);
   return score;
 
 };
