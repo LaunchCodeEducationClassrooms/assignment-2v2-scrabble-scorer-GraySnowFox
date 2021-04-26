@@ -131,6 +131,8 @@ function scorerPrompt(){
   }
 };
 
+let newPointStructure =  {};
+
 function transform(scoring) {
   let transformation = {};
   for (score in scoring){
@@ -141,12 +143,14 @@ function transform(scoring) {
   return transformation;
 }
 
+;
 
 
 function runProgram() {
-  let wordInput = initialPrompt();
-  console.log("Score for " + wordInput + ": " + scorerPrompt().scoringFunction(wordInput));
-  let newPointStructure =  transform(oldPointStructure);
+  initialPrompt();
+  scorerPrompt();
+  transform(oldPointStructure);
+
 
  /* console.log(oldScrabbleScorer(wordInput));
   console.log("Simple score: " + simpleScore(wordInput));
