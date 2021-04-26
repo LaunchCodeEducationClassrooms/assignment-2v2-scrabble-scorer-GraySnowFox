@@ -28,7 +28,7 @@ function oldScrabbleScorer(word) {
 	  for (const pointValue in oldPointStructure) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+			letterPoints += pointValue;
 
 		 }
 	  }
