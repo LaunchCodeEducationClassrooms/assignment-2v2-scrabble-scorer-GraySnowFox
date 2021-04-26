@@ -18,10 +18,11 @@ const scoringAlgorithms = [
   {name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.', scoringFunction:vowelBonusScore},
   {name:'Scrabble',	description:'The traditional scoring algorithm.',	scoringFunction:scrabbleScore}
 ]
+
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 
-	let letterPoints = "";
+	let letterPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
 	  for (const pointValue in oldPointStructure) {
