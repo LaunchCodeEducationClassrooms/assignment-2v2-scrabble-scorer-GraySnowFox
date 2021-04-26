@@ -138,7 +138,7 @@ function transform(scoring) {
       transformation[scoring[score][i].toLowerCase()] = Number(score) 
     }
   }
-  return newPointStructure
+  return transformation;
 }
 
 
