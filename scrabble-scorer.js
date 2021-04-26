@@ -88,7 +88,7 @@ let scoreObject = {
 let vowelObject = {
   name: "Bonus Vowels",
   description: "Vowels are 3pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
 };
 
 
