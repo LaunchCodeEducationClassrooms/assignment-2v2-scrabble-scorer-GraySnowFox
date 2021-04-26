@@ -4,13 +4,13 @@ const input = require("readline-sync");
 
 const oldPointStructure = {
   0: [' '],
-  1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
-  2: ['D', 'G'],
-  3: ['B', 'C', 'M', 'P'],
-  4: ['F', 'H', 'V', 'W', 'Y'],
-  5: ['K'],
-  8: ['J', 'X'],
-  10: ['Q', 'Z']
+  1: ['a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'],
+  2: ['d', 'g'],
+  3: ['b', 'c', 'm', 'p'],
+  4: ['f', 'h', 'v', 'w', 'y'],
+  5: ['k'],
+  8: ['j', 'x'],
+  10: ['q', 'z']
 };
 
 function oldScrabbleScorer(word) {
