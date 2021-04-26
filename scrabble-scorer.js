@@ -134,13 +134,12 @@ function scorerPrompt(){
 let newPointStructure =  {};
 
 function transform(scoring) {
-  let transformation = {};
   for (score in scoring){
     for (i = 0; i < scoring[score].length; i++){
-      transformation[scoring[score][i].toLowerCase()] = Number(score) 
+      newPointStructure[scoring[score][i].toLowerCase()] = Number(score) 
     }
   }
-  return transformation;
+  return newPointStructure;
 }
 
 ;
