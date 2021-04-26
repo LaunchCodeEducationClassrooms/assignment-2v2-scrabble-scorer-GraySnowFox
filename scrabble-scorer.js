@@ -98,7 +98,7 @@ function initialPrompt() {
 
 
 function scrabbleScore(word){
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let score = 0; 
 
   for(i = 0; i<word.length; i++){
@@ -108,6 +108,8 @@ function scrabbleScore(word){
   return score;
 
 };
+
+
 
 
 
