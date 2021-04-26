@@ -13,6 +13,11 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
+const scoringAlgorithms = [
+  {name:'Simple Score', description:'Each letter is worth 1 point.', scoringFunction:simpleScore},
+  {name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.', scoringFunction:vowelBonusScore},
+  {name:'Scrabble',	description:'The traditional scoring algorithm.',	scoringFunction:scrabbleScore}
+]
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 
@@ -73,24 +78,6 @@ function vowelBonusScore(word){
   return score;  
 };
 
-let simpleObject = {
-  name: "Simple Score",
-  description: "Each letter is worth 1 point.",
-  scorerFunction: simpleScore
-};
-
-let scoreObject = {
-  name: "Scrabble",
-  description: "The traditional scoring algorithm.",
-  scorerFunction: scrabbleScore
-};
-
-let vowelObject = {
-  name: "Bonus Vowels",
-  description: "Vowels are 3pts, consonants are 1 pt.",
-  scoringFunction: vowelBonusScore
-};
-
 
 
 
@@ -120,7 +107,7 @@ function scrabbleScore(word){
 
 };
 
-const scoringAlgorithms = [simpleObject, vowelObject, scoreObject];
+
 
 function scorerPrompt(){
   let correctChoice = false;
